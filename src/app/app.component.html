@@ -1,0 +1,18 @@
+<div class="container">
+    <nav>
+      <ul>
+        <li><a [routerLink]="[ '/' ]">Trooper</a></li>
+        <li *ngIf="userStatus"><a [routerLink]="[ '/file-upload' ]">Files</a></li>
+      </ul>
+      <ul>
+        <li *ngIf="!userStatus"><a [routerLink]="[ '/register' ]">Register</a></li> 
+        <li *ngIf="!userStatus"><a [routerLink]="[ '/login' ]">Login</a></li>
+        <li *ngIf="userStatus"><button class="logout" (click)="logout()">Logout</button></li>
+      </ul>
+    </nav>
+    <header> 
+    </header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+</div>
